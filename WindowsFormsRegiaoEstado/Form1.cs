@@ -29,7 +29,32 @@ namespace WindowsFormsRegiaoEstado
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (cboEstados.Text == "SP" || cboEstados.Text == "RJ" || cboEstados.Text == "MG" || cboEstados.Text == "ES")
+            {
+                cboSudeste.Items.Add(cboEstados.Text);
+                cboEstados.Items.RemoveAt(cboEstados.SelectedIndex);
+                lblEstados.Text = cboEstados.Items.Count.ToString();
+                lblSudeste.Text = cboEstados.Items.Count.ToString();
+                cboSudeste.Sorted = true;
+            }
 
+            if (cboEstados.Text == "PR" || cboEstados.Text == "RS" || cboEstados.Text == "MG" || cboEstados.Text == "SC")
+            {
+                cboSul.Items.Add(cboEstados.Text);
+                cboEstados.Items.RemoveAt(cboEstados.SelectedIndex);
+                lblEstados.Text = cboEstados.Items.Count.ToString();
+                lblSul.Text = cboEstados.Items.Count.ToString();
+                cboSudeste.Sorted = true;
+            }
+
+            if (cboEstados.Text == "MT" || cboEstados.Text == "GO" || cboEstados.Text == "MS")
+            {
+                cboCentro.Items.Add(cboEstados.Text);
+                cboEstados.Items.RemoveAt(cboEstados.SelectedIndex);
+                lblEstados.Text = cboEstados.Items.Count.ToString();
+                lblCentro.Text = cboEstados.Items.Count.ToString();
+                cboCentro.Sorted = true;
+            }
         }
 
         private void cboNordeste_SelectedIndexChanged(object sender, EventArgs e)
